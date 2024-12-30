@@ -1,6 +1,7 @@
 import { ChevronRightIcon, TrashIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
+import "../style/Tasks.css";
 
 function Tasks({tasks, onTaskClick, onDeleteTaskClick}) {
 
@@ -14,7 +15,7 @@ function Tasks({tasks, onTaskClick, onDeleteTaskClick}) {
   }
 
   return (
-    <ul className="space-y-4 p-6 bg-slate-200 rounded-md shadow">
+    <ul className="space-y-4 p-6 bg-slate-200 rounded-md shadow max-h-96 overflow-y-auto custom-scroll">
       {tasks.map((task) => (
         <li key={task.id} className="flex gap-2">
           <button onClick={() => onTaskClick(task.id)} className={`bg-slate-400 text-left w-full text-white p-2 rounded-md ${task.isCompleted && "line-through bg-slate-700"}`}>
