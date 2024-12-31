@@ -14,7 +14,7 @@ function Tasks({tasks, onTaskClick, onDeleteTaskClick}) {
     navigate(`/task?${query.toString()}`);
   }
 
-  return (
+  if (tasks != 0) return (
     <ul className="space-y-4 p-6 bg-slate-200 rounded-md shadow max-h-96 overflow-y-auto custom-scroll">
       {tasks.map((task) => (
         <li key={task.id} className="flex gap-2">
